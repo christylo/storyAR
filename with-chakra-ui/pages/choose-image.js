@@ -17,12 +17,9 @@ export default function ChooseImage() {
             <h1>Class Lessons</h1>
             <Breadcrumb>
                 <BreadcrumbItem>
-                    <BreadcrumbLink href="#">Home</BreadcrumbLink>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
                 </BreadcrumbItem>
 
-                <BreadcrumbItem>
-                    <BreadcrumbLink href="#">Docs</BreadcrumbLink>
-                </BreadcrumbItem>
 
                 <BreadcrumbItem isCurrentPage>
                     <BreadcrumbLink href="#">Breadcrumb</BreadcrumbLink>

@@ -1,7 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink
+} from "@chakra-ui/react";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -9,6 +13,17 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+
+
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/choose-image">Choose Image</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
