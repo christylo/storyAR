@@ -16,9 +16,9 @@ import {
     Text
 } from "@chakra-ui/react";
 import socketIOClient from "socket.io-client";
-import {useState} from "react";
+import { useState } from "react";
 import jsCookie from 'js-cookie';
-import {Fonts} from "./Fonts";
+import { Fonts } from "../components/fonts";
 
 
 const ENDPOINT = "https://storyar-server.herokuapp.com/";
@@ -60,14 +60,8 @@ export default function Present() {
     }
 
     return (
-
         <div className={styles.presentContainer}>
-            <Head>
-                <title>Create Next App</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
-
-            <Fonts/>
+            <Fonts />
             <Box>
                 <Grid templateColumns="repeat(3, 2fr)" gap={100}>
                     <Link href="/">

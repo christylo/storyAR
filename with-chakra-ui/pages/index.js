@@ -11,7 +11,7 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import { Fonts } from "./Fonts";
+import { Fonts } from "../components/fonts";
 
 export default function Home() {
 

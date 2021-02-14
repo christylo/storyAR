@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import { ChakraProvider } from "@chakra-ui/react"
 import { extendTheme } from "@chakra-ui/react"
-import { Fonts } from "./Fonts"
+import { Fonts } from "../components/fonts"
 
 const theme = extendTheme({
   fonts: {

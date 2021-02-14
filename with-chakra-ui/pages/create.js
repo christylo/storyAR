@@ -11,7 +11,7 @@ import {
     Grid,
     Text
 } from "@chakra-ui/react";
-import { Fonts } from "./Fonts";
+import { Fonts } from "../components/fonts";
 import socketIOClient from "socket.io-client";
 import { useState } from "react";
 import jsCookie from "js-cookie";
