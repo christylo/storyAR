@@ -185,16 +185,16 @@ export default function Present() {
                     value={imageIndex}
                     onChange={setImageIndex}
                 >
+                    <img src="/bug.png"/>
+                    <img src="/149.png"/>
+                    <img src="/1200px-144Articuno.webp"/>
+                    <img src="/81-Magnemite.png"/>
                     <img src="/bacteria.png"/>
-                    <img src="/food.png"/>
                     <img src="/skull.png"/>
-                    <img src="/A1.png"/>
-                    <img src="/A2.png"/>
-                    <img src="/A3.png"/>
-                    <img src="/A4.png"/>
-                    <img src="/A5.png"/>
-                    <img src="/B1.png"/>
                     <img src="/B2.png"/>
+                    <img src="/food.png"/>
+                    <img src="/B2.png"/>
+                    <img src="/Coronavirus_3D_illustration_by_CDC_1600x900.png"/>
 
                 </Carousel>
                 <Flex align="center" justify="center">
