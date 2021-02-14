@@ -21,7 +21,7 @@ import jsCookie from 'js-cookie';
 import {Fonts} from "./Fonts";
 
 
-const ENDPOINT = "https://localhost:4000";
+const ENDPOINT = "https://storyar-server.herokuapp.com/";
 
 
 export default function Present() {

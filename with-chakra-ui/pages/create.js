@@ -19,7 +19,7 @@ import { useRouter } from "next/router";
 
 const randomstring = require('randomstring');
 
-const ENDPOINT = "https://localhost:4000";
+const ENDPOINT = "https://storyar-server.herokuapp.com/";
 
 
 export default function Create() {
