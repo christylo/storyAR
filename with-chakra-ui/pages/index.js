@@ -24,12 +24,11 @@ export default function Home() {
 
       <Fonts />
       <Box>
-        <Grid templateColumns="repeat(4, 1fr)" gap={10}>
-          <Box w="70px" h="10" bg="blue.500" />
+        <Grid templateColumns="repeat(3, 2fr)" gap={100}>
+          <Text fontSize={48} color="white">• storyAR</Text>
           <Spacer></Spacer>
-          <Spacer></Spacer>
-          <div>
-            <Breadcrumb separator=" " spacing={4} fontFamily="BreadCrumb" fontWeight={50}>
+          <div className={styles.navTabs}>
+            <Breadcrumb separator=" " spacing={4} fontFamily="BreadCrumb" fontWeight={50} color="white">
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">home</BreadcrumbLink>
               </BreadcrumbItem>
@@ -101,6 +100,6 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
-    </div>
+    </div >
   )
 }

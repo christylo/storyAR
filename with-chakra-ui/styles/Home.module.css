@@ -1,11 +1,16 @@
 .container {
   min-height: 100vh;
   padding: 0 3rem;
-  padding-top: 3rem;
+  padding-top: 2.5rem;
   /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #474747;
+}
+
+.navTabs {
+  padding-top: 2rem;
 }
 
 .main {
@@ -15,6 +20,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../public/images/homePage.svg");
 }
 
 .footer {

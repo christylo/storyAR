@@ -8,7 +8,7 @@ export const Fonts = () => (
       /* tomorrow bold 700 */
     @font-face {   
         font-family: "Tomorrow";   
-        src: url(../public/fonts/Tomorrow/Tomorrow-ExtraBold.ttf) 
+        src: url(../fonts/Tomorrow/Tomorrow-Bold.ttf) 
         format('truetype'); 
     }
 
