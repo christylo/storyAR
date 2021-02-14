@@ -188,7 +188,14 @@ export default function Present() {
                     <img src="/bacteria.png"/>
                     <img src="/food.png"/>
                     <img src="/skull.png"/>
-                    <img src="/bug.png"/>
+                    <img src="/A1.png"/>
+                    <img src="/A2.png"/>
+                    <img src="/A3.png"/>
+                    <img src="/A4.png"/>
+                    <img src="/A5.png"/>
+                    <img src="/B1.png"/>
+                    <img src="/B2.png"/>
+
                 </Carousel>
                 <Flex align="center" justify="center">
                     <Button m={25} padding={5} onClick={() => {
