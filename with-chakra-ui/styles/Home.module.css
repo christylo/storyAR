@@ -19,6 +19,14 @@
   padding-top: 2rem;
 }
 
+.buttonPadding {
+  padding-top: 45%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
   padding: 5rem 0;
   flex: 1;
