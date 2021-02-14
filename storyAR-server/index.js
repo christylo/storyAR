@@ -8,12 +8,13 @@ const fs = require('fs');
 const key = fs.readFileSync('key.pem');
 const cert = fs.readFileSync('cert.pem');
 const https = require('https');
+const randomstring = require('randomstring');
 
 var app = express();
 const server = https.createServer({key: key, cert: cert}, app,);
 const io = socketio(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: ["http://localhost:3000", "https://amritb.github.io"],
         methods: ["GET", "POST"]
     }
 });
@@ -23,18 +24,32 @@ app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public')));
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('chat message', msg => {
-        console.log(msg)
-    });
-    socket.on('Room1', msg => {
-        console.log(msg)
-    });
-    socket.on('createRoom', msg => {
-        console.log("Created Room");
-        socket.join('Room1');
+    console.log(`Client ${socket.id} connected`);
+
+    socket.join(socket.handshake.query);
+
+    socket.on('slideEvent', (code,state) => {
+        console.log("Change state requested from: " + code + " [" + state + "]");
+        socket.broadcast.emit("slideEvent",state);
     });
 
+    // socket.on('createRoom', msg => {
+    //     console.log("Created Room");
+    //     let accessCode = randomstring.generate({
+    //         length: 4,
+    //         charset: 'alphabetic',
+    //         capitalization: 'uppercase',
+    //         readable: 'true'
+    //     })
+    //     socket.emit('createRoom', accessCode);
+    //     socket.join(accessCode);
+    // });
+
+    socket.on('joinRoom', accessCode => {
+        console.log("Join Room");
+        socket.join(accessCode);
+        socket.emit("Success");
+    });
 });
 
 server.listen(4000, () => {

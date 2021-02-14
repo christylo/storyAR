@@ -1,19 +1,20 @@
 import '../styles/globals.css'
-import { ChakraProvider } from "@chakra-ui/react"
-import { extendTheme } from "@chakra-ui/react"
+import {ChakraProvider} from "@chakra-ui/react"
+import {extendTheme} from "@chakra-ui/react"
+import {Fonts} from "./Fonts"
 
 const theme = extendTheme({
-  fonts: {
-    BreadCrumb: "Tomorrow",
-    heading: "Tomorrow",
-    body: "Tomorrow",
-  },
+    fonts: {
+        BreadCrumb: "Tomorrow",
+    },
 })
 
-function MyApp({ Component, pageProps }) {
-  return <ChakraProvider theme={theme}>
-    <Component {...pageProps} />
-  </ChakraProvider>
+function MyApp({Component, pageProps}) {
+    return (
+        <ChakraProvider theme={theme}>
+            <Component {...pageProps} />
+        </ChakraProvider>
+    )
 
 }
 
