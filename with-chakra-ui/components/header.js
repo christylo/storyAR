@@ -24,6 +24,10 @@ export const Header = (props) => {
                         <BreadcrumbItem>
                             <BreadcrumbLink href="/create">try it out</BreadcrumbLink>
                         </BreadcrumbItem>
+
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="/ai">AI</BreadcrumbLink>
+                        </BreadcrumbItem>
                     </Breadcrumb>
                 </div>
             </Grid>
