@@ -20,6 +20,7 @@ const ENDPOINT = "https://localhost:4000";
 export default function Present() {
     const [response, setResponse] = useState("");
     const [accessCode, setAccessCode] = useState("");
+    const [hidden, setHidden] = useState(true);
 
     function nextSlide() {
         const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode')});
@@ -30,6 +31,12 @@ export default function Present() {
     function previousSlide() {
         const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode')});
         socket.emit("slideEvent",jsCookie.get('accessCode'),"previous");
+        //console.log(response);
+    }
+
+    function hideModel() {
+        const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode')});
+        socket.emit("modelHide",jsCookie.get('accessCode'),hidden);
         //console.log(response);
     }
 
@@ -51,6 +58,13 @@ export default function Present() {
                     nextSlide();
                 }}>
                     Next
+                </Button>
+                <Spacer/>
+                <Button m={25} padding={5} onClick={() => {
+                    setHidden(!hidden);
+                    hideModel();
+                }}>
+                    { hidden === true ? "Hide" : "Hidden"}
                 </Button>
             </Box>
         </Flex>
