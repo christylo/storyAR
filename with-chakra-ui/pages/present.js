@@ -21,7 +21,6 @@ import jsCookie from 'js-cookie';
 import { Fonts } from "../components/fonts";
 import Header from '../components/header'
 
-import Slider from "react-slick";
 // import bacteria from "/bacteria.png";
 // import food from "../public/food.png";
 // import skull from "../public/skull.png";
