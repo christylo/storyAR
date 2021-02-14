@@ -20,11 +20,12 @@ import { useState } from "react";
 import jsCookie from 'js-cookie';
 import { Fonts } from "../components/fonts";
 import ImageList from '@material-ui/core/ImageList';
+import Header from '../components/header'
 
 
 
-
-const ENDPOINT = "https://storyar-server.herokuapp.com/";
+//const ENDPOINT = "https://storyar-server.herokuapp.com/";
+const ENDPOINT = "https://localhost:4000";
 
 
 export default function Present() {
@@ -36,7 +37,7 @@ export default function Present() {
         const socket = socketIOClient(ENDPOINT, {
             reconnection: true,
             reconnectionAttempts: 3,
-            query: jsCookie.get('accessCode')
+            query: {accessCode: jsCookie.get('accessCode')}
         });
         socket.emit("slideEvent", jsCookie.get('accessCode'), "next");
         //console.log(response);
@@ -46,7 +47,7 @@ export default function Present() {
         const socket = socketIOClient(ENDPOINT, {
             reconnection: true,
             reconnectionAttempts: 3,
-            query: jsCookie.get('accessCode')
+            query: {accessCode: jsCookie.get('accessCode')}
         });
         socket.emit("slideEvent", jsCookie.get('accessCode'), "previous");
         //console.log(response);
@@ -56,7 +57,7 @@ export default function Present() {
         const socket = socketIOClient(ENDPOINT, {
             reconnection: true,
             reconnectionAttempts: 3,
-            query: jsCookie.get('accessCode')
+            query: {accessCode: jsCookie.get('accessCode')}
         });
         socket.emit("modelHide", jsCookie.get('accessCode'), hidden);
         //console.log(response);
@@ -67,31 +68,9 @@ export default function Present() {
             <Fonts />
             <ImageList cols={3} rowHeight={164} >
             </ImageList>
-            <Box>
-                <Grid templateColumns="repeat(3, 2fr)" gap={100}>
-                    <Link href="/">
-                        <Text fontSize={48} color="white" fontFamily="BreadCrumb">• storyAR</Text>
-                    </Link>
 
-                    <Spacer></Spacer>
-                    <div className={styles.navTabs}>
-                        <Breadcrumb separator=" " spacing={4} fontFamily="BreadCrumb" fontWeight={50} color="white">
-                            <BreadcrumbItem>
-                                <BreadcrumbLink href="/">home</BreadcrumbLink>
-                            </BreadcrumbItem>
+            <Header/>
 
-                            <BreadcrumbItem>
-                                <BreadcrumbLink href="/create">how does it work</BreadcrumbLink>
-                            </BreadcrumbItem>
-
-                            <BreadcrumbItem>
-                                <BreadcrumbLink href="/create">try it out</BreadcrumbLink>
-                            </BreadcrumbItem>
-                        </Breadcrumb>
-                    </div>
-                </Grid>
-
-            </Box>
             <Flex align="center" justify="center" height="60vh">
                 <Box>
                     <Heading fontFamily="Quicksand" color="white">

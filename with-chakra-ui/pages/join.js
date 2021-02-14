@@ -32,6 +32,7 @@ export default function Join() {
     useEffect(() => {
         console.log("listening");
         const socket = socketIOClient(ENDPOINT, {query: {accessCode}});
+        console.log(accessCode);
         socket.on("slideEvent", data => {
             setResponse(data);
             console.log(data);

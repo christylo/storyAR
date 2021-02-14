@@ -24,12 +24,19 @@ let model = 0;
 
 app.use(cors());
 app.use(morgan('tiny'));
+
+app.get('/', (req, res) => {
+    res.redirect('index.html');
+})
+
 app.use(express.static(path.join(__dirname, '/public')));
 
 io.on('connection', (socket) => {
     console.log(`Client ${socket.id} connected`);
 
-    socket.join(socket.handshake.query);
+    socket.join(socket.handshake.query.accessCode);
+
+    console.log(socket.handshake.query);
 
     socket.on('slideEvent', (code,state) => {
         console.log("Change state requested from: " + code + " [" + state + "]");
@@ -41,13 +48,13 @@ io.on('connection', (socket) => {
         {
             model--;
         }
-        socket.broadcast.emit("slideEvent",model);
+        socket.in(socket.handshake.query.accessCode).emit("slideEvent",model);
     });
 
     socket.on('modelHide', (code,state) => {
         hidden = !hidden;
         console.log("Hide Model requested from: " + code + " [" + state + "]");
-        socket.broadcast.emit("modelHide",hidden);
+        socket.in(socket.handshake.query.accessCode).emit("modelHide",hidden);
     });
     // socket.on('createRoom', msg => {
     //     console.log("Created Room");
@@ -65,6 +72,10 @@ io.on('connection', (socket) => {
         console.log("Join Room");
         socket.join(accessCode);
         socket.emit("Success");
+    });
+
+    socket.on('getLatest', accessCode => {
+        socket.emit();
     });
 });
 
