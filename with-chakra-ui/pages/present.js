@@ -31,8 +31,8 @@ import Carousel, {Dots} from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 
-//const ENDPOINT = "https://storyar-server.herokuapp.com/";
-const ENDPOINT = "https://localhost:4000";
+const ENDPOINT = "https://storyar-server.herokuapp.com/";
+//const ENDPOINT = "https://localhost:4000";
 
 
 export default function Present() {
