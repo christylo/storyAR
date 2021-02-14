@@ -1,6 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
-const cors = require('cors');
+// const cors = require('cors');
 const socketio = require('socket.io');
 const http = require('http');
 const path = require('path');
@@ -14,7 +14,7 @@ var app = express();
 const server = https.createServer({key: key, cert: cert}, app,);
 const io = socketio(server, {
     cors: {
-        origin: ["http://localhost:3000", "https://amritb.github.io"],
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
@@ -22,7 +22,7 @@ const io = socketio(server, {
 let hidden = false;
 let model = 0;
 
-app.use(cors());
+// app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public')));
 
