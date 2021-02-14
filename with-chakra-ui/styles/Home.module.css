@@ -9,6 +9,10 @@
   background-color: #474747;
   background-image: url("../public/backgroundImage.svg");
   background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-bottom: 3rem;
 }
 
 .navTabs {
