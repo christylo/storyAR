@@ -19,6 +19,9 @@ import socketIOClient from "socket.io-client";
 import { useState } from "react";
 import jsCookie from 'js-cookie';
 import { Fonts } from "../components/fonts";
+import ImageList from '@material-ui/core/ImageList';
+
+
 
 
 const ENDPOINT = "https://storyar-server.herokuapp.com/";
@@ -62,6 +65,8 @@ export default function Present() {
     return (
         <div className={styles.presentContainer}>
             <Fonts />
+            <ImageList cols={3} rowHeight={164} >
+            </ImageList>
             <Box>
                 <Grid templateColumns="repeat(3, 2fr)" gap={100}>
                     <Link href="/">
