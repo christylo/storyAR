@@ -23,7 +23,6 @@ import { Fonts } from "../components/fonts";
 
 const ENDPOINT = "https://storyar-server.herokuapp.com/";
 
-
 export default function Present() {
     const [response, setResponse] = useState("");
     const [accessCode, setAccessCode] = useState("");
