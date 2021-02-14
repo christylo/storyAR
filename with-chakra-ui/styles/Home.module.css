@@ -150,11 +150,17 @@
   justify-content: center;
   align-items: center;
   background-color: #474747;
-  background-image: url("../public/backgroundImage.svg");
+  background-image: url("../public/createBackground.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  padding-bottom: 3rem;
 }
 
+.createButtonPadding {
+  padding-top: 37%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}

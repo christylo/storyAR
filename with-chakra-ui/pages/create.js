@@ -52,19 +52,7 @@ export default function Create() {
 
     return (
         <div>
-            {/* <Flex align="center" justify="center" height="100vh">
-                <Box>
-                    <Heading>
-                        Create Room
-                </Heading>
-                    <Button mt={5} onClick={() => {
-                        createRoom();
-                    }}>
-                        Create Room
-                </Button>
-                </Box>
-            </Flex> */}
-            <div className={styles.container}>
+            <div className={styles.createContainer}>
                 <Head>
                     <title>Create Next App</title>
                     <link rel="icon" href="/favicon.ico" />
@@ -95,6 +83,40 @@ export default function Create() {
                         </div>
                     </Grid>
                 </Box>
+                <div className={styles.createButtonPadding}>
+                    <Button
+                        mt={5}
+                        onClick={() => {
+                            createRoom();
+                        }}
+                        size="lg"
+                        color="white"
+                        backgroundColor="#8055DA"
+                        height="48px"
+                        width="200px"
+                        colorScheme="pink"
+                    >
+                        create room
+                        </Button>
+                </div>
+                {/* <Flex align="center" justify="center" height="130vh">
+                    <Box>
+                        <Button
+                            mt={5}
+                            onClick={() => {
+                                createRoom();
+                            }}
+                            size="lg"
+                            color="white"
+                            backgroundColor="#8055DA"
+                            height="48px"
+                            width="200px"
+                            colorScheme="pink"
+                        >
+                            create room
+                        </Button>
+                    </Box>
+                </Flex> */}
             </div >
         </div>
     )

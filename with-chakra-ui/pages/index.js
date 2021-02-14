@@ -27,7 +27,7 @@ export default function Home() {
       <Box>
         <Grid templateColumns="repeat(3, 2fr)" gap={100}>
           <Link href="/">
-            <Text fontSize={48} color="white">• storyAR</Text>
+            <Text fontSize={48} color="white" fontFamily="BreadCrumb">• storyAR</Text>
           </Link>
 
           <Spacer></Spacer>
