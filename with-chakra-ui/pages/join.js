@@ -5,35 +5,50 @@ import {
     Heading,
     Flex,
     Box,
-    Button
+    Button,
+    Input,
+    FormControl
 } from "@chakra-ui/react";
 import socketIOClient from "socket.io-client";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const ENDPOINT = "https://localhost:4000";
 
 
 export default function Join() {
     const [response, setResponse] = useState("");
+    const [accessCode, setAccessCode] = useState("");
+    const [code, setCode] = useState("");
+    //const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3});
 
-    function createRoom() {
-        console.log("button");
-        const socket = socketIOClient(ENDPOINT, {reconnection: false, reconnectionAttempts: 3});
-        socket.emit('createRoom');
-        console.log(response);
+    function joinRoom() {
+        //socket.emit("joinRoom", accessCode);
     }
+
+    useEffect(() => {
+        console.log("listening");
+        const socket = socketIOClient(ENDPOINT, {query: {accessCode}});
+        socket.on("slideEvent", data => {
+            setResponse(data);
+            console.log(data);
+        });
+    }, [accessCode]);
 
     return (
         <Flex align="center" justify="center" height="100vh">
             <Box>
                 <Heading>
-                    Create Room
+                    Join Room
                 </Heading>
-                <Button mt={5} onClick={() => {
-                    createRoom();
-                }}>
-                    Create Room
-                </Button>
+                <Heading>
+                    Currently Connected to: {accessCode}
+                </Heading>
+                        <Input mt={5} placeholder="Access Code" value={code} onChange={(e) => setCode(e.target.value)}/>
+                    <Button mt={5} onClick={() => {
+                        setAccessCode(code);
+                    }}>
+                        Join
+                    </Button>
             </Box>
         </Flex>
     )
