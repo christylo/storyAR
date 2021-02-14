@@ -9,7 +9,8 @@ import {
     BreadcrumbLink,
     Spacer,
     Grid,
-    Text
+    Text,
+    Image, Flex
 } from "@chakra-ui/react";
 import { Fonts } from "../components/fonts";
 import socketIOClient from "socket.io-client";
@@ -81,7 +82,11 @@ export default function Create() {
                         </div>
                     </Grid>
                 </Box>
-                <div className={styles.createButtonPadding}>
+
+                <Box>
+                    <Image src={"/defBackground.svg"}/>
+                </Box>
+                <Flex align="center" justify="center">
                     <Button
                         mt={5}
                         onClick={() => {
@@ -96,8 +101,8 @@ export default function Create() {
                         fontFamily="Quicksand"
                     >
                         create room
-                        </Button>
-                </div>
+                    </Button>
+                </Flex>
             </div >
         </div>
     )
