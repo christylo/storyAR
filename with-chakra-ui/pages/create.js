@@ -82,10 +82,12 @@ export default function Create() {
                         </div>
                     </Grid>
                 </Box>
+                <Flex align="center" justify="center">
+                    <Box>
+                        <Image src={"/defBackground.svg"}/>
+                    </Box>
+                </Flex>
 
-                <Box>
-                    <Image src={"/defBackground.svg"}/>
-                </Box>
                 <Flex align="center" justify="center">
                     <Button
                         mt={5}
