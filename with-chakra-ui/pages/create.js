@@ -88,6 +88,24 @@ export default function Create() {
                     </Button>
                 </Flex>
 
+                <Spacer/>
+
+                <Flex align="center" justify="center">
+                <Link href="/ai">
+                    <Button
+                        size="lg"
+                        color="white"
+                        backgroundColor="#8055DA"
+                        height="48px"
+                        width="200px"
+                        colorScheme="pink"
+                        fontFamily="Quicksand"
+                    >
+                        Summarize your lesson Plan
+                    </Button>
+                </Link>
+            </Flex>
+
             </div>
         </div>
     )
