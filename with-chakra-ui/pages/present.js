@@ -16,9 +16,9 @@ import {
     Text
 } from "@chakra-ui/react";
 import socketIOClient from "socket.io-client";
-import { useState } from "react";
+import {useState} from "react";
 import jsCookie from 'js-cookie';
-import { Fonts } from "./Fonts";
+import {Fonts} from "./Fonts";
 
 
 const ENDPOINT = "https://localhost:4000";
@@ -27,16 +27,35 @@ const ENDPOINT = "https://localhost:4000";
 export default function Present() {
     const [response, setResponse] = useState("");
     const [accessCode, setAccessCode] = useState("");
+    const [hidden, setHidden] = useState(true);
 
     function nextSlide() {
-        const socket = socketIOClient(ENDPOINT, { reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode') });
+        const socket = socketIOClient(ENDPOINT, {
+            reconnection: true,
+            reconnectionAttempts: 3,
+            query: jsCookie.get('accessCode')
+        });
         socket.emit("slideEvent", jsCookie.get('accessCode'), "next");
         //console.log(response);
     }
 
     function previousSlide() {
-        const socket = socketIOClient(ENDPOINT, { reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode') });
+        const socket = socketIOClient(ENDPOINT, {
+            reconnection: true,
+            reconnectionAttempts: 3,
+            query: jsCookie.get('accessCode')
+        });
         socket.emit("slideEvent", jsCookie.get('accessCode'), "previous");
+        //console.log(response);
+    }
+
+    function hideModel() {
+        const socket = socketIOClient(ENDPOINT, {
+            reconnection: true,
+            reconnectionAttempts: 3,
+            query: jsCookie.get('accessCode')
+        });
+        socket.emit("modelHide", jsCookie.get('accessCode'), hidden);
         //console.log(response);
     }
 
@@ -45,10 +64,10 @@ export default function Present() {
         <div className={styles.presentContainer}>
             <Head>
                 <title>Create Next App</title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <Fonts />
+            <Fonts/>
             <Box>
                 <Grid templateColumns="repeat(3, 2fr)" gap={100}>
                     <Link href="/">
@@ -72,6 +91,29 @@ export default function Present() {
                         </Breadcrumb>
                     </div>
                 </Grid>
+                <Heading>
+                    Present
+                </Heading>
+                <Heading>
+                    Room Code: {jsCookie.get('accessCode')}
+                </Heading>
+                <Button m={25} padding={5} onClick={() => {
+                    previousSlide();
+                }}>
+                    Previous
+                </Button>
+                <Button m={25} padding={5} onClick={() => {
+                    nextSlide();
+                }}>
+                    Next
+                </Button>
+                <Spacer/>
+                <Button m={25} padding={5} onClick={() => {
+                    setHidden(!hidden);
+                    hideModel();
+                }}>
+                    {hidden === true ? "Hide" : "Hidden"}
+                </Button>
             </Box>
             <Flex align="center" justify="center" height="60vh">
                 <Box>
@@ -92,9 +134,9 @@ export default function Present() {
                         nextSlide();
                     }}>
                         Next
-                </Button>
+                    </Button>
                 </Box>
             </Flex>
-        </div >
+        </div>
     )
 }
