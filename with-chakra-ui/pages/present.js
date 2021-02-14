@@ -91,29 +91,7 @@ export default function Present() {
                         </Breadcrumb>
                     </div>
                 </Grid>
-                <Heading>
-                    Present
-                </Heading>
-                <Heading>
-                    Room Code: {jsCookie.get('accessCode')}
-                </Heading>
-                <Button m={25} padding={5} onClick={() => {
-                    previousSlide();
-                }}>
-                    Previous
-                </Button>
-                <Button m={25} padding={5} onClick={() => {
-                    nextSlide();
-                }}>
-                    Next
-                </Button>
-                <Spacer/>
-                <Button m={25} padding={5} onClick={() => {
-                    setHidden(!hidden);
-                    hideModel();
-                }}>
-                    {hidden === true ? "Hide" : "Hidden"}
-                </Button>
+
             </Box>
             <Flex align="center" justify="center" height="60vh">
                 <Box>
@@ -134,6 +112,12 @@ export default function Present() {
                         nextSlide();
                     }}>
                         Next
+                    </Button>
+                    <Button m={25} padding={5} onClick={() => {
+                        setHidden(!hidden);
+                        hideModel();
+                    }}>
+                        {hidden === true ? "Hide" : "Hidden"}
                     </Button>
                 </Box>
             </Flex>
