@@ -5,12 +5,20 @@ import {
     Heading,
     Flex,
     Box,
-    Button
+    Button,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    Spacer,
+    Grid,
+    Text
 } from "@chakra-ui/react";
+import { Fonts } from "./Fonts";
 import socketIOClient from "socket.io-client";
-import {useState} from "react";
+import { useState } from "react";
 import jsCookie from "js-cookie";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
+
 const randomstring = require('randomstring');
 
 const ENDPOINT = "https://localhost:4000";
@@ -43,17 +51,51 @@ export default function Create() {
     }
 
     return (
-        <Flex align="center" justify="center" height="100vh">
-            <Box>
-                <Heading>
-                    Create Room
+        <div>
+            {/* <Flex align="center" justify="center" height="100vh">
+                <Box>
+                    <Heading>
+                        Create Room
                 </Heading>
-                <Button mt={5} onClick={() => {
-                    createRoom();
-                }}>
-                    Create Room
+                    <Button mt={5} onClick={() => {
+                        createRoom();
+                    }}>
+                        Create Room
                 </Button>
-            </Box>
-        </Flex>
+                </Box>
+            </Flex> */}
+            <div className={styles.container}>
+                <Head>
+                    <title>Create Next App</title>
+                    <link rel="icon" href="/favicon.ico" />
+                </Head>
+
+                <Fonts />
+                <Box>
+                    <Grid templateColumns="repeat(3, 2fr)" gap={100}>
+                        <Link href="/">
+                            <Text fontSize={48} color="white" fontFamily="BreadCrumb">• storyAR</Text>
+                        </Link>
+
+                        <Spacer></Spacer>
+                        <div className={styles.navTabs}>
+                            <Breadcrumb separator=" " spacing={4} fontFamily="BreadCrumb" fontWeight={50} color="white">
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/">home</BreadcrumbLink>
+                                </BreadcrumbItem>
+
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/choose-image">how does it work</BreadcrumbLink>
+                                </BreadcrumbItem>
+
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/choose-image">try it out</BreadcrumbLink>
+                                </BreadcrumbItem>
+                            </Breadcrumb>
+                        </div>
+                    </Grid>
+                </Box>
+            </div >
+        </div>
     )
 }
