@@ -88,7 +88,7 @@ export default function Create() {
                     </Button>
                 </Flex>
 
-                <Spacer/>
+                <Spacer h={10}/>
 
                 <Flex align="center" justify="center">
                 <Link href="/ai">
@@ -97,7 +97,7 @@ export default function Create() {
                         color="white"
                         backgroundColor="#8055DA"
                         height="48px"
-                        width="200px"
+                        width="300px"
                         colorScheme="pink"
                         fontFamily="Quicksand"
                     >
