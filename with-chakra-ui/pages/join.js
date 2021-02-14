@@ -12,8 +12,8 @@ import {
 import socketIOClient from "socket.io-client";
 import {useState, useEffect} from "react";
 
-const ENDPOINT = "https://storyar-server.herokuapp.com/";
-//const ENDPOINT = "https://localhost:4000";
+//const ENDPOINT = "https://storyar-server.herokuapp.com/";
+const ENDPOINT = "https://localhost:4000";
 
 
 export default function Join() {
@@ -33,7 +33,7 @@ export default function Join() {
         console.log("listening");
         const socket = socketIOClient(ENDPOINT, {query: {accessCode}});
         console.log(accessCode);
-        socket.on("slideEvent", data => {
+        socket.on("setModel", data => {
             setResponse(data);
             console.log(data);
             setPage(data);

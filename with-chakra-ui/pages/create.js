@@ -64,7 +64,7 @@ export default function Create() {
 
                 <Flex align="center" justify="center">
                     <Box>
-                        <Image src={"/defBackground.svg"}/>
+                        <Image src={"/createBack.svg"}/>
                     </Box>
                 </Flex>
 

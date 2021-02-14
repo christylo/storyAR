@@ -172,7 +172,7 @@
   justify-content: center;
   align-items: center;
   background-color: #474747;
-  background-image: url("../public/presentBackground.svg");
+  /*background-image: url("../public/presentBackground.svg");*/
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;

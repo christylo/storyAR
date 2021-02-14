@@ -51,6 +51,12 @@ io.on('connection', (socket) => {
         socket.in(socket.handshake.query.accessCode).emit("slideEvent",model);
     });
 
+    socket.on('setModel', (code,state) => {
+        console.log("Change state requested from: " + code + " [" + state + "]");
+        model = state;
+        socket.in(socket.handshake.query.accessCode).emit("setModel",model);
+    });
+
     socket.on('modelHide', (code,state) => {
         hidden = !hidden;
         console.log("Hide Model requested from: " + code + " [" + state + "]");
