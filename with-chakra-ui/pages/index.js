@@ -4,8 +4,16 @@ import Link from 'next/link'
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink
+  BreadcrumbLink,
+  Flex,
+  Spacer,
+  Box,
+  Grid,
+  Text,
+  HStack
 } from "@chakra-ui/react";
+import { Fonts } from "./Fonts"
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -14,16 +22,30 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
-        </BreadcrumbItem>
+      <Fonts />
+      <Box>
+        <Grid templateColumns="repeat(4, 1fr)" gap={10}>
+          <Box w="70px" h="10" bg="blue.500" />
+          <Spacer></Spacer>
+          <Spacer></Spacer>
+          <div>
+            <Breadcrumb separator=" " spacing={4} fontFamily="BreadCrumb" fontWeight={50}>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">home</BreadcrumbLink>
+              </BreadcrumbItem>
 
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/choose-image">how does it work</BreadcrumbLink>
+              </BreadcrumbItem>
 
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/choose-image">Choose Image</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/choose-image">try it out</BreadcrumbLink>
+              </BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+        </Grid>
+      </Box>
+
 
       <main className={styles.main}>
         <h1 className={styles.title}>
