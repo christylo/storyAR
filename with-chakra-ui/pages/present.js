@@ -16,9 +16,9 @@ import {
     Text, Image
 } from "@chakra-ui/react";
 import socketIOClient from "socket.io-client";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import jsCookie from 'js-cookie';
-import {Fonts} from "../components/fonts";
+import { Fonts } from "../components/fonts";
 import Header from '../components/header'
 
 
@@ -27,7 +27,7 @@ import Header from '../components/header'
 // import food from "../public/food.png";
 // import skull from "../public/skull.png";
 // import bug from "../public/bug.png";
-import Carousel, {Dots} from '@brainhubeu/react-carousel';
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 
@@ -51,7 +51,7 @@ export default function Present() {
         const socket = socketIOClient(ENDPOINT, {
             reconnection: true,
             reconnectionAttempts: 3,
-            query: {accessCode: jsCookie.get('accessCode')}
+            query: { accessCode: jsCookie.get('accessCode') }
         });
         socket.emit("slideEvent", jsCookie.get('accessCode'), "next");
         //console.log(response);
@@ -63,7 +63,7 @@ export default function Present() {
         const socket = socketIOClient(ENDPOINT, {
             reconnection: true,
             reconnectionAttempts: 3,
-            query: {accessCode: jsCookie.get('accessCode')}
+            query: { accessCode: jsCookie.get('accessCode') }
         });
         socket.emit("slideEvent", jsCookie.get('accessCode'), "previous");
         //console.log(response);
@@ -73,7 +73,7 @@ export default function Present() {
         const socket = socketIOClient(ENDPOINT, {
             reconnection: true,
             reconnectionAttempts: 3,
-            query: {accessCode: jsCookie.get('accessCode')}
+            query: { accessCode: jsCookie.get('accessCode') }
         });
         socket.emit("modelHide", jsCookie.get('accessCode'), hidden);
         //console.log(response);
@@ -84,7 +84,7 @@ export default function Present() {
         const socket = socketIOClient(ENDPOINT, {
             reconnection: true,
             reconnectionAttempts: 3,
-            query: {accessCode: jsCookie.get('accessCode')}
+            query: { accessCode: jsCookie.get('accessCode') }
         });
         // console.log(accessCode);
         socket.emit("setModel", jsCookie.get('accessCode'), imageIndex);
@@ -139,25 +139,29 @@ export default function Present() {
 
     return (
         <div className={styles.presentContainer}>
-            <Fonts/>
+            <Fonts />
 
             <Flex align="center" justify="center">
-                <Header/>
+                <Header />
             </Flex>
 
 
             <Flex align="center" justify="center">
                 <Box>
-                    <Image src={"/defBackground.svg"}/>
+                    <Image src={"/defBackground.svg"} />
                 </Box>
             </Flex>
 
             <Flex align="center" justify="center">
                 <Box>
+
                     <Heading fontFamily="Quicksand" color="white">
                         Present Room Code: {jsCookie.get('accessCode')}
                     </Heading>
-
+                    <Spacer height="10" />
+                    <Heading fontFamily="Quicksand" color="white">
+                        Audience link: bit.ly/storyar
+                    </Heading>
 
                     {/* <Image src="./public/bacteria.png"></Image> */}
                     {/* <Button
@@ -184,62 +188,90 @@ export default function Present() {
 
 
                 {/*//<input value={imageIndex} onChange={setImageIndex} type="number"/>*/}
-                <Box w={200}>
-                <Carousel
-                    value={imageIndex -1 }
-                    onChange={setImageIndex}
-                >
-                    <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500}/>
-                    <Image src="/bug.png" w={500}/>
-                    <Image src="/bacteria.png" w={500}/>
-                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
-                    <Image src="/149.png" w={500}/>
-                    <Image src="/1200px-144Articuno.webp" w={500}/>
-                    <Image src="/81-Magnemite.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
-                    <Image src="/skull.png" w={500}/>
-                    <Image src="/food.png" w={500}/>
 
-                </Carousel>
-                </Box>
+
+                {imageIndex === 0 ? (
+                    <Box w={200}>
+                        <Carousel
+                            value={imageIndex - 1}
+                            onChange={setImageIndex}
+                        >
+                            <Image src="/blank.png" w={500} />
+
+                        </Carousel>
+                    </Box>
+                ) : (
+                        <Box w={200}>
+                            <Carousel
+                                value={imageIndex - 1}
+                                onChange={setImageIndex}
+                            >
+                                <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500} />
+                                <Image src="/bug.png" w={500} />
+                                <Image src="/bacteria.png" w={500} />
+                                <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500} />
+                                <Image src="/149.png" w={500} />
+                                <Image src="/1200px-144Articuno.webp" w={500} />
+                                <Image src="/81-Magnemite.png" w={500} />
+                                <Image src="/B2.png" w={500} />
+                                <Image src="/skull.png" w={500} />
+                                <Image src="/food.png" w={500} />
+
+                            </Carousel>
+                        </Box>
+                    )}
                 <Box w={450}>
-                <Carousel
-                    arrows
-                    value={imageIndex}
-                    onChange={setImageIndex}
-                >
-                    <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500}/>
-                    <Image src="/bug.png" w={500}/>
-                    <Image src="/bacteria.png" w={500}/>
-                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
-                    <Image src="/149.png" w={500}/>
-                    <Image src="/1200px-144Articuno.webp" w={500}/>
-                    <Image src="/81-Magnemite.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
-                    <Image src="/skull.png" w={500}/>
-                    <Image src="/food.png" w={500}/>
+                    <Carousel
+                        arrows
+                        value={imageIndex}
+                        onChange={setImageIndex}
+                    >
+                        <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500} />
+                        <Image src="/bug.png" w={500} />
+                        <Image src="/bacteria.png" w={500} />
+                        <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500} />
+                        <Image src="/149.png" w={500} />
+                        <Image src="/1200px-144Articuno.webp" w={500} />
+                        <Image src="/81-Magnemite.png" w={500} />
+                        <Image src="/B2.png" w={500} />
+                        <Image src="/skull.png" w={500} />
+                        <Image src="/food.png" w={500} />
 
 
-                </Carousel>
+                    </Carousel>
                 </Box>
-                <Box w={200}>
-                <Carousel
-                    value={imageIndex + 1 }
-                    onChange={setImageIndex}
-                >
-                    <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500}/>
-                    <Image src="/bug.png" w={500}/>
-                    <Image src="/bacteria.png" w={500}/>
-                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
-                    <Image src="/149.png" w={500}/>
-                    <Image src="/1200px-144Articuno.webp" w={500}/>
-                    <Image src="/81-Magnemite.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
-                    <Image src="/skull.png" w={500}/>
-                    <Image src="/food.png" w={500}/>
 
-                </Carousel>
-                </Box>
+
+                {imageIndex === 9 ? (
+                    <Box w={200}>
+                        <Carousel
+                            value={imageIndex - 1}
+                            onChange={setImageIndex}
+                        >
+                            <Image src="/blank.png" w={500} />
+
+                        </Carousel>
+                    </Box>
+                ) : (
+                        <Box w={200}>
+                            <Carousel
+                                value={imageIndex + 1}
+                                onChange={setImageIndex}
+                            >
+                                <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500} />
+                                <Image src="/bug.png" w={500} />
+                                <Image src="/bacteria.png" w={500} />
+                                <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500} />
+                                <Image src="/149.png" w={500} />
+                                <Image src="/1200px-144Articuno.webp" w={500} />
+                                <Image src="/81-Magnemite.png" w={500} />
+                                <Image src="/B2.png" w={500} />
+                                <Image src="/skull.png" w={500} />
+                                <Image src="/food.png" w={500} />
+
+                            </Carousel>
+                        </Box>
+                    )}
 
             </Flex>
             <Flex align="center" justify="center">
@@ -250,6 +282,7 @@ export default function Present() {
                     {hidden === true ? "Hide" : "Hidden"}
                 </Button>
             </Flex>
+
         </div>
     )
 }
