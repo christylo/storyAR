@@ -31,8 +31,8 @@ import Carousel, {Dots} from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 
-const ENDPOINT = "https://storyar-server.herokuapp.com/";
-//const ENDPOINT = "https://localhost:4000";
+//const ENDPOINT = "https://storyar-server.herokuapp.com/";
+const ENDPOINT = "https://localhost:4000";
 
 
 export default function Present() {
@@ -141,7 +141,10 @@ export default function Present() {
         <div className={styles.presentContainer}>
             <Fonts/>
 
-            <Header/>
+            <Flex align="center" justify="center">
+                <Header/>
+            </Flex>
+
 
             <Flex align="center" justify="center">
                 <Box>
@@ -186,35 +189,36 @@ export default function Present() {
                     value={imageIndex -1 }
                     onChange={setImageIndex}
                 >
+                    <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500}/>
                     <Image src="/bug.png" w={500}/>
+                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
                     <Image src="/149.png" w={500}/>
                     <Image src="/1200px-144Articuno.webp" w={500}/>
                     <Image src="/81-Magnemite.png" w={500}/>
-                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
                     <Image src="/skull.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
                     <Image src="/food.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
-                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
 
                 </Carousel>
                 </Box>
-                <Box w={500}>
+                <Box w={450}>
                 <Carousel
                     arrows
                     value={imageIndex}
                     onChange={setImageIndex}
                 >
+                    <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500}/>
                     <Image src="/bug.png" w={500}/>
+                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
                     <Image src="/149.png" w={500}/>
                     <Image src="/1200px-144Articuno.webp" w={500}/>
                     <Image src="/81-Magnemite.png" w={500}/>
-                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
                     <Image src="/skull.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
                     <Image src="/food.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
-                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
+
 
                 </Carousel>
                 </Box>
@@ -223,16 +227,16 @@ export default function Present() {
                     value={imageIndex + 1 }
                     onChange={setImageIndex}
                 >
+                    <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500}/>
                     <Image src="/bug.png" w={500}/>
+                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
                     <Image src="/149.png" w={500}/>
                     <Image src="/1200px-144Articuno.webp" w={500}/>
                     <Image src="/81-Magnemite.png" w={500}/>
-                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
                     <Image src="/skull.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
                     <Image src="/food.png" w={500}/>
-                    <Image src="/B2.png" w={500}/>
-                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
 
                 </Carousel>
                 </Box>

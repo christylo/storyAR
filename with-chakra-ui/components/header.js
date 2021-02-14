@@ -18,7 +18,7 @@ export const Header = (props) => {
                         </BreadcrumbItem>
 
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/create">how does it work</BreadcrumbLink>
+                            <BreadcrumbLink href="https://devpost.com/software/storyar">how does it work</BreadcrumbLink>
                         </BreadcrumbItem>
 
                         <BreadcrumbItem>

@@ -60,7 +60,9 @@ export default function Create() {
 
                 <Fonts/>
 
-                <Header/>
+                <Flex align="center" justify="center">
+                    <Header/>
+                </Flex>
 
                 <Flex align="center" justify="center">
                     <Box>

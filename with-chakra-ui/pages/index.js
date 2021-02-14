@@ -24,8 +24,10 @@ export default function Home() {
       </Head>
 
       <Fonts />
+        <Flex align="center" justify="center">
+            <Header/>
+        </Flex>
 
-      <Header/>
 
         {/*<Flex align="center" justify="center" w={"100wv"}>*/}
         {/*    <Box>*/}
