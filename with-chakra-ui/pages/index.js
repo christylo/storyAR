@@ -5,7 +5,6 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Flex,
   Spacer,
   Box,
   Grid,
@@ -38,18 +37,18 @@ export default function Home() {
               </BreadcrumbItem>
 
               <BreadcrumbItem>
-                <BreadcrumbLink href="/choose-image">how does it work</BreadcrumbLink>
+                <BreadcrumbLink href="/create">how does it work</BreadcrumbLink>
               </BreadcrumbItem>
 
               <BreadcrumbItem>
-                <BreadcrumbLink href="/choose-image">try it out</BreadcrumbLink>
+                <BreadcrumbLink href="/create">try it out</BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
           </div>
         </Grid>
       </Box>
       <div className={styles.buttonPadding}>
-        <Link href="/choose-image">
+        <Link href="/create">
           <Button
             size="lg"
             color="white"
@@ -57,6 +56,7 @@ export default function Home() {
             height="48px"
             width="200px"
             colorScheme="pink"
+            fontFamily="Quicksand"
           >
             try now
       </Button>

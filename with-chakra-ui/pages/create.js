@@ -2,8 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import {
-    Heading,
-    Flex,
     Box,
     Button,
     Breadcrumb,
@@ -73,11 +71,11 @@ export default function Create() {
                                 </BreadcrumbItem>
 
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/choose-image">how does it work</BreadcrumbLink>
+                                    <BreadcrumbLink href="/create">how does it work</BreadcrumbLink>
                                 </BreadcrumbItem>
 
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/choose-image">try it out</BreadcrumbLink>
+                                    <BreadcrumbLink href="/create">try it out</BreadcrumbLink>
                                 </BreadcrumbItem>
                             </Breadcrumb>
                         </div>
@@ -95,28 +93,11 @@ export default function Create() {
                         height="48px"
                         width="200px"
                         colorScheme="pink"
+                        fontFamily="Quicksand"
                     >
                         create room
                         </Button>
                 </div>
-                {/* <Flex align="center" justify="center" height="130vh">
-                    <Box>
-                        <Button
-                            mt={5}
-                            onClick={() => {
-                                createRoom();
-                            }}
-                            size="lg"
-                            color="white"
-                            backgroundColor="#8055DA"
-                            height="48px"
-                            width="200px"
-                            colorScheme="pink"
-                        >
-                            create room
-                        </Button>
-                    </Box>
-                </Flex> */}
             </div >
         </div>
     )

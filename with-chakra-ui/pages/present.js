@@ -8,11 +8,18 @@ import {
     Button,
     Input,
     FormControl,
-    Spacer
+    Spacer,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    Grid,
+    Text
 } from "@chakra-ui/react";
 import socketIOClient from "socket.io-client";
-import {useState} from "react";
+import { useState } from "react";
 import jsCookie from 'js-cookie';
+import { Fonts } from "./Fonts";
+
 
 const ENDPOINT = "https://localhost:4000";
 
@@ -22,37 +29,72 @@ export default function Present() {
     const [accessCode, setAccessCode] = useState("");
 
     function nextSlide() {
-        const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode')});
-        socket.emit("slideEvent",jsCookie.get('accessCode'),"next");
+        const socket = socketIOClient(ENDPOINT, { reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode') });
+        socket.emit("slideEvent", jsCookie.get('accessCode'), "next");
         //console.log(response);
     }
 
     function previousSlide() {
-        const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode')});
-        socket.emit("slideEvent",jsCookie.get('accessCode'),"previous");
+        const socket = socketIOClient(ENDPOINT, { reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode') });
+        socket.emit("slideEvent", jsCookie.get('accessCode'), "previous");
         //console.log(response);
     }
 
     return (
-        <Flex align="center" justify="center" height="100vh">
+
+        <div className={styles.presentContainer}>
+            <Head>
+                <title>Create Next App</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+
+            <Fonts />
             <Box>
-                <Heading>
-                    Present
-                </Heading>
-                <Heading>
-                    Room Code: {jsCookie.get('accessCode')}
-                </Heading>
-                <Button m={25} padding={5} onClick={() => {
-                    previousSlide();
-                }}>
-                    Previous
-                </Button>
-                <Button m={25} padding={5} onClick={() => {
-                    nextSlide();
-                }}>
-                    Next
-                </Button>
+                <Grid templateColumns="repeat(3, 2fr)" gap={100}>
+                    <Link href="/">
+                        <Text fontSize={48} color="white" fontFamily="BreadCrumb">• storyAR</Text>
+                    </Link>
+
+                    <Spacer></Spacer>
+                    <div className={styles.navTabs}>
+                        <Breadcrumb separator=" " spacing={4} fontFamily="BreadCrumb" fontWeight={50} color="white">
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href="/">home</BreadcrumbLink>
+                            </BreadcrumbItem>
+
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href="/create">how does it work</BreadcrumbLink>
+                            </BreadcrumbItem>
+
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href="/create">try it out</BreadcrumbLink>
+                            </BreadcrumbItem>
+                        </Breadcrumb>
+                    </div>
+                </Grid>
             </Box>
-        </Flex>
+            <Flex align="center" justify="center" height="60vh">
+                <Box>
+                    <Heading fontFamily="Quicksand" color="white">
+                        Present Room Code: {jsCookie.get('accessCode')}
+                    </Heading>
+                    <Button
+                        fontFamily="Quicksand"
+                        m={25}
+                        padding={5}
+                        onClick={() => {
+                            previousSlide();
+                        }}
+                    >
+                        Previous
+                    </Button>
+                    <Button fontFamily="Quicksand" m={25} padding={5} onClick={() => {
+                        nextSlide();
+                    }}>
+                        Next
+                </Button>
+                </Box>
+            </Flex>
+        </div >
     )
 }

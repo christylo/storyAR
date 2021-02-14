@@ -12,6 +12,13 @@ export const Fonts = () => (
         format('truetype'); 
     }
 
+    /* quicksand regular 400 */
+    @font-face {   
+        font-family: "Quicksand";   
+        src: url(../fonts/Quicksand/static/Quicksand-SemiBold.ttf) 
+        format('truetype'); 
+    }
+
       /* latin-ext */
       @font-face {
         font-family: 'Open Sans';
