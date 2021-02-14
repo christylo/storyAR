@@ -1,12 +1,14 @@
 .container {
   min-height: 100vh;
   padding: 0 3rem;
-  padding-top: 2.5rem;
+  padding-top: 1rem;
   /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #474747;
+  background-image: url("../public/backgroundImage.svg");
+  background-repeat: no-repeat;
 }
 
 .navTabs {
@@ -20,7 +22,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../public/images/homePage.svg");
 }
 
 .footer {
