@@ -7,10 +7,12 @@ import {
     Box,
     Button,
     Input,
-    FormControl
+    FormControl,
+    Spacer
 } from "@chakra-ui/react";
 import socketIOClient from "socket.io-client";
 import {useState} from "react";
+import jsCookie from 'js-cookie';
 
 const ENDPOINT = "https://localhost:4000";
 
@@ -19,11 +21,16 @@ export default function Present() {
     const [response, setResponse] = useState("");
     const [accessCode, setAccessCode] = useState("");
 
-    function joinRoom() {
-        console.log(accessCode);
-        const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3});
-        socket.emit(accessCode, "Connected from Room 1");
-        console.log(response);
+    function nextSlide() {
+        const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode')});
+        socket.emit("slideEvent",jsCookie.get('accessCode'),"next");
+        //console.log(response);
+    }
+
+    function previousSlide() {
+        const socket = socketIOClient(ENDPOINT, {reconnection: true, reconnectionAttempts: 3, query: jsCookie.get('accessCode')});
+        socket.emit("slideEvent",jsCookie.get('accessCode'),"previous");
+        //console.log(response);
     }
 
     return (
@@ -32,13 +39,16 @@ export default function Present() {
                 <Heading>
                     Present
                 </Heading>
-                <Button mt={25} padding={5} onClick={() => {
-                    joinRoom();
+                <Heading>
+                    Room Code: {jsCookie.get('accessCode')}
+                </Heading>
+                <Button m={25} padding={5} onClick={() => {
+                    previousSlide();
                 }}>
-                    Back
+                    Previous
                 </Button>
-                <Button mt={25} padding={5} onClick={() => {
-                    joinRoom();
+                <Button m={25} padding={5} onClick={() => {
+                    nextSlide();
                 }}>
                     Next
                 </Button>

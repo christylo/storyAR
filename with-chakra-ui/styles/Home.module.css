@@ -9,10 +9,22 @@
   background-color: #474747;
   background-image: url("../public/backgroundImage.svg");
   background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-bottom: 3rem;
 }
 
 .navTabs {
   padding-top: 2rem;
+}
+
+.buttonPadding {
+  padding-top: 45%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {

@@ -10,11 +10,12 @@ import {
   Box,
   Grid,
   Text,
-  HStack
+  Button,
 } from "@chakra-ui/react";
-import { Fonts } from "./Fonts"
+import { Fonts } from "./Fonts";
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -44,6 +45,20 @@ export default function Home() {
           </div>
         </Grid>
       </Box>
+      <div className={styles.buttonPadding}>
+        <Link href="/choose-image">
+          <Button
+            size="lg"
+            color="white"
+            backgroundColor="#8055DA"
+            height="48px"
+            width="200px"
+            colorScheme="pink"
+          >
+            try now
+      </Button>
+        </Link>
+      </div>
     </div >
   )
 }
