@@ -21,6 +21,13 @@ import jsCookie from 'js-cookie';
 import { Fonts } from "../components/fonts";
 import Header from '../components/header'
 
+import Slider from "react-slick";
+import bacteria from ".././images/bacteria.png";
+import food from "./images/food.png";
+import skull from "./images/skull.png";
+import bug from "./images/bug.png";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+
 
 const ENDPOINT = "https://storyar-server.herokuapp.com/";
 //const ENDPOINT = "https://localhost:4000";
@@ -61,17 +68,43 @@ export default function Present() {
         //console.log(response);
     }
 
+    const [imageIndex, setImageIndex] = useState(0);
+
+    const settings = {
+        infinite: true,
+        lazyLoad: true,
+        speed: 300,
+        slidesToShow: 3,
+        centerMode: true,
+        centerPadding: 0,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
+        beforeChange: (current, next) => setImageIndex(next),
+      };
+
     return (
         <div className={styles.presentContainer}>
             <Fonts />
 
             <Header/>
 
+            <Slider {...settings}>
+        {images.map((img, idx) => (
+          <div className={idx === imageIndex ? "slide activeSlide" : "slide"}>
+            <img src={img} alt={img} />
+          </div>
+        ))}
+      </Slider>
+
             <Flex align="center" justify="center" height="60vh">
                 <Box>
                     <Heading fontFamily="Quicksand" color="white">
                         Present Room Code: {jsCookie.get('accessCode')}
                     </Heading>
+
+
+
+
                     <Button
                         fontFamily="Quicksand"
                         m={25}
