@@ -19,6 +19,9 @@ const io = socketio(server, {
     }
 });
 
+let hidden = false;
+let model = 0;
+
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public')));
@@ -30,9 +33,22 @@ io.on('connection', (socket) => {
 
     socket.on('slideEvent', (code,state) => {
         console.log("Change state requested from: " + code + " [" + state + "]");
-        socket.broadcast.emit("slideEvent",state);
+        if (state === "next")
+        {
+            model++;
+        }
+        else if (state === "previous")
+        {
+            model--;
+        }
+        socket.broadcast.emit("slideEvent",model);
     });
 
+    socket.on('modelHide', (code,state) => {
+        hidden = !hidden;
+        console.log("Hide Model requested from: " + code + " [" + state + "]");
+        socket.broadcast.emit("modelHide",hidden);
+    });
     // socket.on('createRoom', msg => {
     //     console.log("Created Room");
     //     let accessCode = randomstring.generate({
