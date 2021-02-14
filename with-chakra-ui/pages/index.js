@@ -26,7 +26,10 @@ export default function Home() {
       <Fonts />
       <Box>
         <Grid templateColumns="repeat(3, 2fr)" gap={100}>
-          <Text fontSize={48} color="white">• storyAR</Text>
+          <Link href="/">
+            <Text fontSize={48} color="white">• storyAR</Text>
+          </Link>
+
           <Spacer></Spacer>
           <div className={styles.navTabs}>
             <Breadcrumb separator=" " spacing={4} fontFamily="BreadCrumb" fontWeight={50} color="white">
