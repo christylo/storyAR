@@ -177,35 +177,75 @@ export default function Present() {
 
                 </Box>
             </Flex>
+            <Flex align="center" justify="center">
 
-            <div>
+
                 {/*//<input value={imageIndex} onChange={setImageIndex} type="number"/>*/}
+                <Box w={200}>
+                <Carousel
+                    value={imageIndex -1 }
+                    onChange={setImageIndex}
+                >
+                    <Image src="/bug.png" w={500}/>
+                    <Image src="/149.png" w={500}/>
+                    <Image src="/1200px-144Articuno.webp" w={500}/>
+                    <Image src="/81-Magnemite.png" w={500}/>
+                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/skull.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
+                    <Image src="/food.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
+                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
+
+                </Carousel>
+                </Box>
+                <Box w={500}>
                 <Carousel
                     arrows
                     value={imageIndex}
                     onChange={setImageIndex}
                 >
-                    <img src="/bug.png"/>
-                    <img src="/149.png"/>
-                    <img src="/1200px-144Articuno.webp"/>
-                    <img src="/81-Magnemite.png"/>
-                    <img src="/bacteria.png"/>
-                    <img src="/skull.png"/>
-                    <img src="/B2.png"/>
-                    <img src="/food.png"/>
-                    <img src="/B2.png"/>
-                    <img src="/Coronavirus_3D_illustration_by_CDC_1600x900.png"/>
+                    <Image src="/bug.png" w={500}/>
+                    <Image src="/149.png" w={500}/>
+                    <Image src="/1200px-144Articuno.webp" w={500}/>
+                    <Image src="/81-Magnemite.png" w={500}/>
+                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/skull.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
+                    <Image src="/food.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
+                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
 
                 </Carousel>
-                <Flex align="center" justify="center">
-                    <Button m={25} padding={5} onClick={() => {
-                        setHidden(!hidden);
-                        hideModel();
-                    }}>
-                        {hidden === true ? "Hide" : "Hidden"}
-                    </Button>
-                </Flex>
-            </div>
+                </Box>
+                <Box w={200}>
+                <Carousel
+                    value={imageIndex + 1 }
+                    onChange={setImageIndex}
+                >
+                    <Image src="/bug.png" w={500}/>
+                    <Image src="/149.png" w={500}/>
+                    <Image src="/1200px-144Articuno.webp" w={500}/>
+                    <Image src="/81-Magnemite.png" w={500}/>
+                    <Image src="/bacteria.png" w={500}/>
+                    <Image src="/skull.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
+                    <Image src="/food.png" w={500}/>
+                    <Image src="/B2.png" w={500}/>
+                    <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500}/>
+
+                </Carousel>
+                </Box>
+
+            </Flex>
+            <Flex align="center" justify="center">
+                <Button m={25} padding={5} onClick={() => {
+                    setHidden(!hidden);
+                    hideModel();
+                }}>
+                    {hidden === true ? "Hide" : "Hidden"}
+                </Button>
+            </Flex>
         </div>
     )
 }
