@@ -188,24 +188,38 @@ export default function Present() {
 
 
                 {/*//<input value={imageIndex} onChange={setImageIndex} type="number"/>*/}
-                <Box w={200}>
-                    <Carousel
-                        value={imageIndex - 1}
-                        onChange={setImageIndex}
-                    >
-                        <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500} />
-                        <Image src="/bug.png" w={500} />
-                        <Image src="/bacteria.png" w={500} />
-                        <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500} />
-                        <Image src="/149.png" w={500} />
-                        <Image src="/1200px-144Articuno.webp" w={500} />
-                        <Image src="/81-Magnemite.png" w={500} />
-                        <Image src="/B2.png" w={500} />
-                        <Image src="/skull.png" w={500} />
-                        <Image src="/food.png" w={500} />
 
-                    </Carousel>
-                </Box>
+
+                {imageIndex === 0 ? (
+                    <Box w={200}>
+                        <Carousel
+                            value={imageIndex - 1}
+                            onChange={setImageIndex}
+                        >
+                            <Image src="/blank.png" w={500} />
+
+                        </Carousel>
+                    </Box>
+                ) : (
+                        <Box w={200}>
+                            <Carousel
+                                value={imageIndex - 1}
+                                onChange={setImageIndex}
+                            >
+                                <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500} />
+                                <Image src="/bug.png" w={500} />
+                                <Image src="/bacteria.png" w={500} />
+                                <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500} />
+                                <Image src="/149.png" w={500} />
+                                <Image src="/1200px-144Articuno.webp" w={500} />
+                                <Image src="/81-Magnemite.png" w={500} />
+                                <Image src="/B2.png" w={500} />
+                                <Image src="/skull.png" w={500} />
+                                <Image src="/food.png" w={500} />
+
+                            </Carousel>
+                        </Box>
+                    )}
                 <Box w={450}>
                     <Carousel
                         arrows
@@ -226,24 +240,38 @@ export default function Present() {
 
                     </Carousel>
                 </Box>
-                <Box w={200}>
-                    <Carousel
-                        value={imageIndex + 1}
-                        onChange={setImageIndex}
-                    >
-                        <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500} />
-                        <Image src="/bug.png" w={500} />
-                        <Image src="/bacteria.png" w={500} />
-                        <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500} />
-                        <Image src="/149.png" w={500} />
-                        <Image src="/1200px-144Articuno.webp" w={500} />
-                        <Image src="/81-Magnemite.png" w={500} />
-                        <Image src="/B2.png" w={500} />
-                        <Image src="/skull.png" w={500} />
-                        <Image src="/food.png" w={500} />
 
-                    </Carousel>
-                </Box>
+
+                {imageIndex === 9 ? (
+                    <Box w={200}>
+                        <Carousel
+                            value={imageIndex - 1}
+                            onChange={setImageIndex}
+                        >
+                            <Image src="/blank.png" w={500} />
+
+                        </Carousel>
+                    </Box>
+                ) : (
+                        <Box w={200}>
+                            <Carousel
+                                value={imageIndex + 1}
+                                onChange={setImageIndex}
+                            >
+                                <Image src="/128001455-ripe-apple-with-slices-on-white.jpg" w={500} />
+                                <Image src="/bug.png" w={500} />
+                                <Image src="/bacteria.png" w={500} />
+                                <Image src="/Coronavirus_3D_illustration_by_CDC_1600x900.png" w={500} />
+                                <Image src="/149.png" w={500} />
+                                <Image src="/1200px-144Articuno.webp" w={500} />
+                                <Image src="/81-Magnemite.png" w={500} />
+                                <Image src="/B2.png" w={500} />
+                                <Image src="/skull.png" w={500} />
+                                <Image src="/food.png" w={500} />
+
+                            </Carousel>
+                        </Box>
+                    )}
 
             </Flex>
             <Flex align="center" justify="center">
