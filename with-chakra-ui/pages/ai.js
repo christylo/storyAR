@@ -34,7 +34,7 @@ export default function Create() {
                 logprobs: null,
                 stop: "\n"
             },
-            {headers: {Authorization: 'Bearer sk-WLYhuMiEbwALUszZJJDzHnv3lwbMEhUPVfPoQr8X'}})
+            {headers: {Authorization: 'Bearer ${process.env.OPENAI}'}})
             .then(function (response) {
                 console.log("Response:",response.data.choices[0].text);
                 toast({
