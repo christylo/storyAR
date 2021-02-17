@@ -1,7 +1,7 @@
 # storyAR
 
-# View our Live Demo on Youtube
-[![TreeHacks storyAR 2021 Pitch/Demo](https://imgur.com/qukoYFl)](https://youtu.be/2Y-ytikZLAs)
+## View our Live Demo on Youtube
+[![storyAR 2021 Pitch/Demo](https://imgur.com/qukoYFl)](https://youtu.be/2Y-ytikZLAs)
 
 ## Try for yourself
 Web app link: [https://story-ar.web.app/](https://story-ar.web.app/)
@@ -18,8 +18,7 @@ storyAR provides an interactive learning experience because studies would become
 ## How we built it
 Our frontend is built with React, next.js, and uses Chakra UI for accessibility. Our backend uses Firebase and Heroku to host, socket.io to create different rooms, and AR.js to create the AR app. We get our 3D models from Sketchfab.
 
-![TechStack]
-(https://i.postimg.cc/mk0kV1Mn/story-ar-diagram2.png)
+![TechStack](https://i.postimg.cc/mk0kV1Mn/story-ar-diagram2.png)
 
 ## Challenges we ran into
 - Learning how to use AR because no one had previous experience
