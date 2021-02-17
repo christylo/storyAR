@@ -1,7 +1,7 @@
 # storyAR
 
 ## View our Live Demo on Youtube
-[![storyAR 2021 Pitch/Demo](https://imgur.com/qukoYFl)](https://youtu.be/2Y-ytikZLAs)
+[![storyAR 2021 Pitch/Demo](https://i.imgur.com/qukoYFl.jpg)](https://youtu.be/2Y-ytikZLAs)
 
 ## Try for yourself
 Web app link: [https://story-ar.web.app/](https://story-ar.web.app/)
