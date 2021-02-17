@@ -6,6 +6,7 @@
 ## Try for yourself
 Web app link: [https://story-ar.web.app/](https://story-ar.web.app/)
 Mobile app link: [https://storyar-server.herokuapp.com/](https://storyar-server.herokuapp.com/)
+Devpost link: [https://devpost.com/software/storyar](https://devpost.com/software/storyar)
 
 ## Inspiration
 COVID-19 has forced the world into a new normal. 1.2 billion children in 186 countries are affected by school closures due to the pandemic. Children enrolled in online learning aren’t able to experience the in-person fun and games with their friends as well as engage with their teachers like before in a normal setting. My personal favorite memory as a kid was always storytime and volunteering to hold the puppets. That isn’t really possible with the online learning environment though. How can we provide young children with that engaging in-class experience again? 
